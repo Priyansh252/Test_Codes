@@ -19,12 +19,12 @@ if(ask0=="1"):
             outlis2.append(hexlist[random.randint(0,15)])
 
         file.write(f"{''.join(outlis1)} {''.join(outlis2)}{ask}\n")
-        print(f"{''.join(outlis1)}\n{''.join(outlis2)}")
+        print(f"Generated Key (Hex): {''.join(outlis1)}\nCiphertext (Hex): {''.join(outlis2)}")
         
 elif (ask0=="2"):
     with open('otp.txt','r') as file:
-        ask1=input("give code 1 :")
-        ask2=input("Give code 2 : ")
+        ask1=input("give Generated Key (Hex): ")  
+        ask2=input("Give Ciphertext (Hex): ")
         ask3=ask1+" "+ask2
         
         # print(ask3)
@@ -38,14 +38,14 @@ elif (ask0=="2"):
                 print(x[len(ask3):])
                    
             else:
-                print("galat code")
+                print("Invalid codes")
             count+=1
     
     with open('otp.txt','w') as file:
         for x in relist:
             file.write(x)
     
-else:print("bhai input to sahi se de le encrypiton decyption baad me kijo")
+else:print("Invalid Input")
            
 
     
